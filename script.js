@@ -1,3 +1,11 @@
+/* ========================================
+   LESSON 19 — JAVASCRIPT OBJECTS
+   ======================================== */
+
+
+/* ========================================
+   ONE OBJECT
+   ======================================== */
 
 const project = {
     name: "lesson19-practice",
@@ -6,66 +14,163 @@ const project = {
     completed: true
 };
 
+
 console.log(project);
+
 console.log(project.name);
+
 console.log(project.lesson);
+
 console.log(project.completed);
+
+
+/* Change a property */
 
 project.completed = false;
 
 console.log(project.completed);
 
+
+/* Add a new property */
+
 project.student = "Germain";
+
 console.log(project.student);
 
+
+/* ========================================
+   FUNCTION THAT RETURNS A VALUE
+   ======================================== */
+
 function describeProject(project) {
+
     return `${project.name} is part of Lesson ${project.lesson}.`;
 }
+
+
 console.log(describeProject(project));
 
-const projectOutput = document.querySelector("#project-output");
 
-projectOutput.textContent = describeProject(project);
+/* Display the result on the page */
 
-const projects = [
+const projectOutput =
+    document.querySelector("#project-output");
+
+
+projectOutput.textContent =
+    describeProject(project);
+
+
+/* ========================================
+   LIST OF REPOSITORY OBJECTS
+   ======================================== */
+
+const repos = [
+
     {
         name: "git-practice-1",
         lesson: 13,
-        topic: "Git basics"
+        topic: "init, add, commit, push"
     },
 
     {
         name: "git-practice-2",
         lesson: 14,
-        topic: "Git branches"
+        topic: "branches and VS Code"
     },
 
     {
         name: "lesson19-practice",
         lesson: 19,
-        topic: "JavaScript objects"
+        topic: "tables, Grid, objects"
     }
+
 ];
-console.log(projects[0].name);
-console.log(projects[0].lesson);
-console.log(projects[0].topic);
 
-for (const project of projects) {
-    console.log(project.name);
+
+console.log(repos);
+
+
+/* ========================================
+   ACCESS OBJECT PROPERTIES
+   ======================================== */
+
+console.log(repos.length);
+
+console.log(repos[0].name);
+
+console.log(repos[0].lesson);
+
+console.log(repos[0].topic);
+
+
+/* ========================================
+   FUNCTION TO BUILD A TABLE ROW
+   ======================================== */
+
+function makeRepoRow(repo) {
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <th scope="row">${repo.name}</th>
+        <td>${repo.lesson}</td>
+        <td>${repo.topic}</td>
+    `;
+
+    return row;
 }
-const projectList = document.querySelector("#project-list");
 
-for (const project of projects) {
-    const listItem = document.createElement("li");
+
+/* Test the function */
+
+console.log(makeRepoRow(repos[1]));
+
+
+/* ========================================
+   BUILD THE TABLE FROM THE OBJECTS
+   ======================================== */
+
+const reposBody =
+    document.querySelector("#repos-body");
+
+
+for (const repo of repos) {
+
+    const row = makeRepoRow(repo);
+
+    reposBody.appendChild(row);
+}
+
+
+/* ========================================
+   DISPLAY OBJECTS IN A LIST
+   ======================================== */
+
+const projectList =
+    document.querySelector("#project-list");
+
+
+for (const repo of repos) {
+
+    const listItem =
+        document.createElement("li");
 
     listItem.textContent =
-        `${project.name} — Lesson ${project.lesson} — ${project.topic}`;
+        `${repo.name} — Lesson ${repo.lesson} — ${repo.topic}`;
 
     projectList.appendChild(listItem);
 }
 
-function countProjects(projects) {
-  return projects.length;
+
+/* ========================================
+   COUNT THE REPOSITORIES
+   ======================================== */
+
+function countRepos(repos) {
+
+    return repos.length;
 }
 
-console.log(countProjects(projects));
+
+console.log(countRepos(repos));
