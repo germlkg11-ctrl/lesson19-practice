@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Germain's Lesson 19 practice page for HTML tables, CSS Grid, JavaScript objects, and Git.">
+
+    <title>Lesson 19 Practice | Germain</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lesson 19 Practice</h1>
+
+        <p class="page-intro">
+            Learning HTML, CSS, JavaScript, and Git step by step.
+        </p>
+    </header>
+
+    <main>
+        <section aria-labelledby="repositories-heading">
+            <h2 id="repositories-heading">My Practice Repositories</h2>
+
+            <table>
+                <caption>My practice repositories</caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Repository</th>
+                        <th scope="col">Lesson</th>
+                        <th scope="col">What It Taught Me</th>
+                    </tr>
+                </thead>
+
+                <tbody id="repos-body">
+                    <tr>
+                        <th scope="row">git-practice-1</th>
+                        <td>13</td>
+                        <td>
+                            Git initialization, staging, commits, and pushing.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">git-practice-2</th>
+                        <td>14</td>
+                        <td>Branches and working with VS Code.</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">lesson19-practice</th>
+                        <td>19</td>
+                        <td>
+                            Accessible tables, responsive Grid,
+                            and JavaScript objects.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section aria-labelledby="grid-heading">
+            <h2 id="grid-heading">What I'm Learning</h2>
+
+            <p class="page-intro">
+                These cards demonstrate a responsive CSS Grid layout.
+            </p>
+
+            <div class="repository-grid">
+
+                <article class="repository-card">
+                    <h3>HTML Tables</h3>
+                    <p>
+                        I learned to organize information into rows
+                        and columns using accessible table markup.
+                    </p>
+                </article>
+
+                <article class="repository-card">
+                    <h3>CSS Grid</h3>
+                    <p>
+                        I'm learning to arrange content in responsive
+                        columns that adapt to different screen sizes.
+                    </p>
+                </article>
+
+                <article class="repository-card">
+                    <h3>JavaScript Objects</h3>
+                    <p>
+                        I'm preparing to organize related information
+                        into properties and values.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+             <section aria-labelledby="javascript-heading">
+    <h2 id="javascript-heading">JavaScript Project Information</h2>
+
+    <p id="project-output">
+        Project information will appear here.
+    </p>
+
+    <ul id="project-list"></ul>
+</section>  
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Germain. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

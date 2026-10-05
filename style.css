@@ -1,0 +1,164 @@
+
+
+/* ========================================
+   LESSON 19 — PAGE STYLES
+   ======================================== */
+
+/* Make element sizing predictable */
+* {
+    box-sizing: border-box;
+}
+
+/* General page styles */
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #eef3f8;
+    color: #243447;
+    line-height: 1.6;
+}
+
+/* Page header */
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+h1 {
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.page-intro {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Main content sections */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    color: #00509e;
+    margin-bottom: 18px;
+}
+
+/* Accessible repository table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+caption {
+    padding: 12px;
+    font-weight: bold;
+    color: #003366;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #d6e0eb;
+}
+
+thead {
+    background-color: #003366;
+    color: #ffffff;
+}
+
+tbody th {
+    color: #00509e;
+}
+
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f0f6ff;
+}
+
+/* Responsive CSS Grid */
+.repository-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 20px;
+}
+
+/* Individual learning cards */
+.repository-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border: 1px solid #d6e0eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.repository-card h3 {
+    margin-top: 0;
+    color: #00509e;
+}
+
+.repository-card p {
+    margin-bottom: 0;
+}
+
+.repository-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #b8860b;
+    outline-offset: 4px;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    color: #526579;
+    border-top: 1px solid #d6e0eb;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 16px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .repository-grid {
+        grid-template-columns: 1fr;
+    }
+}
