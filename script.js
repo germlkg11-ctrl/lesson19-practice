@@ -141,8 +141,42 @@ for (const repo of repos) {
 
     reposBody.appendChild(row);
 }
+/* ========================================
+   FUNCTION TO BUILD A REPOSITORY CARD
+   ======================================== */
 
+function makeRepoCard(repo) {
 
+    const card = document.createElement("article");
+
+    card.className = "repository-card";
+
+    card.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p><strong>Lesson:</strong> ${repo.lesson}</p>
+        <p><strong>Topic:</strong> ${repo.topic}</p>
+    `;
+
+    return card;
+}
+
+/* ========================================
+   SELECT THE REPOSITORY CARD CONTAINER
+   ======================================== */
+
+const repositoryGrid =
+    document.querySelector(".repository-grid");
+ 
+ /* ========================================
+   BUILD REPOSITORY CARDS FROM DATA
+   ======================================== */
+
+for (const repo of repos) {
+
+    const card = makeRepoCard(repo);
+
+    repositoryGrid.appendChild(card);
+}   
 /* ========================================
    DISPLAY OBJECTS IN A LIST
    ======================================== */
