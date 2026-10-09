@@ -264,6 +264,7 @@ const practiceItems = [
 console.log("Number of practice items:", countCards(practiceItems));
 
 
+
 /* ========================================
    CHECK PROJECT COMPLETION STATUS
    ======================================== */
@@ -276,10 +277,49 @@ function getProjectStatus(project) {
     }
 }
 
+
+/* ========================================
+   SELECT THE STATUS ELEMENT AND BUTTON
+   ======================================== */
+
 const projectStatus =
     document.querySelector("#project-status");
 
-projectStatus.textContent =
-    getProjectStatus(project);
+const toggleStatusButton =
+    document.querySelector("#toggle-status");
 
-console.log("Project status:", getProjectStatus(project));
+
+/* ========================================
+   UPDATE THE STATUS MESSAGE AND BUTTON
+   ======================================== */
+
+function updateProjectStatus() {
+    projectStatus.textContent =
+        getProjectStatus(project);
+
+    if (project.completed === true) {
+        toggleStatusButton.textContent =
+            "Mark as in progress";
+    } else {
+        toggleStatusButton.textContent =
+            "Mark as completed";
+    }
+}
+
+
+/* ========================================
+   TOGGLE THE PROJECT COMPLETION STATUS
+   ======================================== */
+
+toggleStatusButton.addEventListener("click", function () {
+    project.completed = !project.completed;
+
+    updateProjectStatus();
+
+    console.log("Project status:", getProjectStatus(project));
+});
+
+
+/* Display the initial status */
+
+updateProjectStatus();

@@ -73,27 +73,34 @@
 
         </section>
 
-        <!-- JAVASCRIPT OBJECTS -->
-        <section aria-labelledby="javascript-heading">
+        
+<!-- JAVASCRIPT OBJECTS -->
+<section aria-labelledby="javascript-heading">
 
-            <h2 id="javascript-heading">
-                JavaScript Project Information
-            </h2>
+    <h2 id="javascript-heading">
+        JavaScript Project Information
+    </h2>
 
-            
-<p id="project-output">
-    Project information will appear here.
-</p>
+    <p id="project-output">
+        Project information will appear here.
+    </p>
 
-<p id="project-status">
-    Project status will appear here.
-</p>
+    <p id="project-status" aria-live="polite">
+        Project status will appear here.
+    </p>
 
-            <h3>Projects Built from Objects</h3>
+    <button
+        type="button"
+        id="toggle-status"
+    >
+        Mark as completed
+    </button>
 
-            <ul id="project-list"></ul>
+    <h3>Projects Built from Objects</h3>
 
-        </section>
+    <ul id="project-list"></ul>
+
+</section>
 
     </main>
 
