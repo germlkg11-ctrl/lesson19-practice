@@ -240,3 +240,46 @@ function countRepos(repos) {
 console.log("Number of repositories:", countRepos(repos));
 
 console.log("Number of learning topics:", learningTopics.length);
+
+
+/* ========================================
+   COUNT THE LEARNING CARDS
+   ======================================== */
+
+function countCards(cards) {
+    return cards.length;
+}
+
+console.log("Number of learning cards:", countCards(learningTopics));
+
+
+/* Test the function with a different array */
+
+const practiceItems = [
+    "HTML",
+    "CSS",
+    "JavaScript"
+];
+
+console.log("Number of practice items:", countCards(practiceItems));
+
+
+/* ========================================
+   CHECK PROJECT COMPLETION STATUS
+   ======================================== */
+
+function getProjectStatus(project) {
+    if (project.completed === true) {
+        return "Project completed!";
+    } else {
+        return "Project in progress.";
+    }
+}
+
+const projectStatus =
+    document.querySelector("#project-status");
+
+projectStatus.textContent =
+    getProjectStatus(project);
+
+console.log("Project status:", getProjectStatus(project));
