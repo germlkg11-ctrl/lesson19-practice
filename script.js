@@ -4,7 +4,7 @@
 
 
 /* ========================================
-   ONE OBJECT
+   ONE PROJECT OBJECT
    ======================================== */
 
 const project = {
@@ -14,13 +14,9 @@ const project = {
     completed: true
 };
 
-
 console.log(project);
-
 console.log(project.name);
-
 console.log(project.lesson);
-
 console.log(project.completed);
 
 
@@ -43,19 +39,16 @@ console.log(project.student);
    ======================================== */
 
 function describeProject(project) {
-
     return `${project.name} is part of Lesson ${project.lesson}.`;
 }
-
 
 console.log(describeProject(project));
 
 
-/* Display the result on the page */
+/* Display project information on the page */
 
 const projectOutput =
     document.querySelector("#project-output");
-
 
 projectOutput.textContent =
     describeProject(project);
@@ -66,7 +59,6 @@ projectOutput.textContent =
    ======================================== */
 
 const repos = [
-
     {
         name: "git-practice-1",
         lesson: 13,
@@ -84,9 +76,7 @@ const repos = [
         lesson: 19,
         topic: "tables, Grid, objects"
     }
-
 ];
-
 
 console.log(repos);
 
@@ -96,11 +86,8 @@ console.log(repos);
    ======================================== */
 
 console.log(repos.length);
-
 console.log(repos[0].name);
-
 console.log(repos[0].lesson);
-
 console.log(repos[0].topic);
 
 
@@ -109,7 +96,6 @@ console.log(repos[0].topic);
    ======================================== */
 
 function makeRepoRow(repo) {
-
     const row = document.createElement("tr");
 
     row.innerHTML = `
@@ -128,67 +114,113 @@ console.log(makeRepoRow(repos[1]));
 
 
 /* ========================================
-   BUILD THE TABLE FROM THE OBJECTS
+   BUILD THE REPOSITORY TABLE
    ======================================== */
 
 const reposBody =
     document.querySelector("#repos-body");
 
-
 for (const repo of repos) {
-
     const row = makeRepoRow(repo);
 
     reposBody.appendChild(row);
 }
+
+
 /* ========================================
-   FUNCTION TO BUILD A REPOSITORY CARD
+   SEVEN LEARNING TOPICS
    ======================================== */
 
-function makeRepoCard(repo) {
+const learningTopics = [
+    {
+        title: "HTML",
+        description:
+            "Building webpages with elements, headings, links, and semantic structure."
+    },
 
+    {
+        title: "CSS",
+        description:
+            "Styling webpages with colors, spacing, typography, and layouts."
+    },
+
+    {
+        title: "Responsive Design",
+        description:
+            "Making webpages adapt to different screen sizes and devices."
+    },
+
+    {
+        title: "JavaScript",
+        description:
+            "Adding functionality with variables, functions, loops, and objects."
+    },
+
+    {
+        title: "HTML Tables",
+        description:
+            "Organizing information into accessible rows, columns, and headings."
+    },
+
+    {
+        title: "CSS Grid",
+        description:
+            "Arranging cards and content in flexible, responsive grid layouts."
+    },
+
+    {
+        title: "Git and GitHub",
+        description:
+            "Tracking changes, creating branches, merging pull requests, and publishing projects."
+    }
+];
+
+
+/* ========================================
+   FUNCTION TO BUILD A LEARNING CARD
+   ======================================== */
+
+function makeLearningCard(topic) {
     const card = document.createElement("article");
 
     card.className = "repository-card";
 
-    card.innerHTML = `
-        <h3>${repo.name}</h3>
-        <p><strong>Lesson:</strong> ${repo.lesson}</p>
-        <p><strong>Topic:</strong> ${repo.topic}</p>
-    `;
+    const heading = document.createElement("h3");
+    heading.textContent = topic.title;
+
+    const description = document.createElement("p");
+    description.textContent = topic.description;
+
+    card.appendChild(heading);
+    card.appendChild(description);
 
     return card;
 }
 
+
 /* ========================================
-   SELECT THE REPOSITORY CARD CONTAINER
+   DISPLAY THE SEVEN LEARNING CARDS
    ======================================== */
 
 const repositoryGrid =
-    document.querySelector(".repository-grid");
- 
- /* ========================================
-   BUILD REPOSITORY CARDS FROM DATA
-   ======================================== */
+    document.querySelector("#card-grid");
 
-for (const repo of repos) {
-
-    const card = makeRepoCard(repo);
+for (const topic of learningTopics) {
+    const card = makeLearningCard(topic);
 
     repositoryGrid.appendChild(card);
-}   
+}
+
+
 /* ========================================
-   DISPLAY OBJECTS IN A LIST
+   DISPLAY REPOSITORIES IN A LIST
    ======================================== */
 
 const projectList =
     document.querySelector("#project-list");
 
-
 for (const repo of repos) {
-
-    const listItem =
-        document.createElement("li");
+    const listItem = document.createElement("li");
 
     listItem.textContent =
         `${repo.name} — Lesson ${repo.lesson} — ${repo.topic}`;
@@ -202,9 +234,9 @@ for (const repo of repos) {
    ======================================== */
 
 function countRepos(repos) {
-
     return repos.length;
 }
 
+console.log("Number of repositories:", countRepos(repos));
 
-console.log(countRepos(repos));
+console.log("Number of learning topics:", learningTopics.length);
