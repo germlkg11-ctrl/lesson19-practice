@@ -1,5 +1,5 @@
-/* ========================================
-   LESSON 19 — JAVASCRIPT OBJECTS
+﻿/* ========================================
+   LESSON 19 Ã¢â‚¬â€ JAVASCRIPT OBJECTS
    ======================================== */
 
 
@@ -75,11 +75,26 @@ const repos = [
         name: "lesson19-practice",
         lesson: 19,
         topic: "tables, Grid, objects"
+    },
+
+        {
+        name: "germain-website",
+        lesson: 19,
+        topic: "HTML, CSS, JavaScript, and GitHub Pages"
+    },
+    {
+        name: "feedback-card",
+        lesson: 19,
+        topic: "HTML, CSS, and JavaScript interactions"
+    },
+        {
+        name: "javascript-practice",
+        lesson: 19,
+        topic: "Arrays, functions, and loops"
     }
 ];
 
 console.log(repos);
-
 
 /* ========================================
    ACCESS OBJECT PROPERTIES
@@ -223,7 +238,7 @@ for (const repo of repos) {
     const listItem = document.createElement("li");
 
     listItem.textContent =
-        `${repo.name} — Lesson ${repo.lesson} — ${repo.topic}`;
+        `${repo.name} Ã¢â‚¬â€ Lesson ${repo.lesson} Ã¢â‚¬â€ ${repo.topic}`;
 
     projectList.appendChild(listItem);
 }
@@ -238,6 +253,16 @@ function countRepos(repos) {
 }
 
 console.log("Number of repositories:", countRepos(repos));
+
+const repoCountOutput =
+    document.querySelector("#repo-count");
+
+function updateRepoCount() {
+    repoCountOutput.textContent =
+        `Total repositories: ${countRepos(repos)}`;
+}
+
+updateRepoCount();
 
 console.log("Number of learning topics:", learningTopics.length);
 
