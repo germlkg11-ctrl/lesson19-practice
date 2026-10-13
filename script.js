@@ -1,5 +1,5 @@
 ﻿/* ========================================
-   LESSON 19 Ã¢â‚¬â€ JAVASCRIPT OBJECTS
+   LESSON 19‚¬ JAVASCRIPT OBJECTS
    ======================================== */
 
 
@@ -227,6 +227,7 @@ for (const topic of learningTopics) {
 }
 
 
+
 /* ========================================
    DISPLAY REPOSITORIES IN A LIST
    ======================================== */
@@ -238,7 +239,7 @@ for (const repo of repos) {
     const listItem = document.createElement("li");
 
     listItem.textContent =
-        `${repo.name} Ã¢â‚¬â€ Lesson ${repo.lesson} Ã¢â‚¬â€ ${repo.topic}`;
+        `${repo.name} - Lesson ${repo.lesson} - ${repo.topic}`;
 
     projectList.appendChild(listItem);
 }
